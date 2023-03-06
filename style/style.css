@@ -1,0 +1,184 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*      Setting variable        */
+
+:root {
+    --dark-grey: #222222;
+    --light-grey: #CCCCCC;
+    --deep-blue: #1F232E;
+    --sky-blue: #2CBDFE;
+    --bright-purple: #FF0066;
+    --pale-pink: #FF6B97;
+}
+
+body {
+    background-color: var(--deep-blue);
+}
+
+/*      header      */
+
+header {
+    width: 100%;
+    position: relative;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 5%;
+}
+
+nav .logo {
+    color: var(--light-grey);
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+/* nav a {
+    margin: 0 auto;
+    text-transform: capitalize;
+    color: var(--sky-blue);
+    font-size: 1.5rem;
+} */
+
+nav .search {
+    margin-left: auto;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    border: 1px solid var(--light-grey);
+}
+
+nav .search input {
+    height: 100%;
+    width: 80%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
+    color: white;
+}
+
+nav .search button {
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: var(--light-grey);
+    color: var(--deep-blue);
+    font-size: 1.5rem;
+}
+
+header img {
+    position: absolute;
+    right: 10px;
+    z-index: 4;
+}
+
+header .container {
+    width: 100%;
+    min-height: 90vh;
+    overflow: hidden;
+    position: relative;
+}
+
+header .container::after {
+    position: absolute;
+    content: '';
+    width: 80vmin;
+    height: 80vmin;
+    border-radius: 50%;
+    right: 50px;
+    background: var(--bright-purple);
+    opacity: .5;
+    top: 30%;
+}
+
+header .container h1:first-child {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--light-grey);
+    color: transparent;
+    /* font-size: clamp(10rem, 19vw, 20rem); */
+    font-size: 20rem;
+    text-transform: uppercase;
+    position: absolute;
+    left: 10px;
+    /* top: 40%;
+    transform: translateY(-50%); */
+    white-space: nowrap;
+    z-index: 3;
+    opacity: .5;
+}
+
+header .container h1:last-child {
+    color: var(--light-grey);
+    font-size: 5rem;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    z-index: 3;
+}
+
+/*      section         */
+
+section {
+    width: 100%;
+    min-height: 50vh;
+    padding: 0 5%;
+    position: relative;
+    z-index: 100;
+}
+
+section h1 {
+    color: var(--light-grey);
+    display: flex;
+    align-items: center;
+}
+
+section .content h1 a {
+    color: var(--bright-purple);
+    margin-left: 10px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+section .content .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 50px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+section :where(.content .container, .containerSearch) .box {
+    width: 300px;
+    height: 450px;
+    background: url(https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+section h1 span {
+    color: var(--bright-purple);
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+section .containerSearch {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 20px 0;
+    place-items: center;
+}

@@ -8,6 +8,7 @@ if (location.pathname.split('/').includes('search.html')) {
 } else if (location.pathname.split('/').includes('display.html')) {
     const getValue = decodeURI(location.search.substring(1))
     aboutAnime(getValue)
+    episodesAnime(getValue)
 }
 
 
@@ -32,7 +33,21 @@ async function aboutAnime(searchValue) {
     const getData = await fetch('https://api.iwannawatch.cf/garson.php?Name=' + encodeURIComponent(searchValue))
     const dataJson = await getData.json()
     console.log(dataJson)
+}
 
+async function episodesAnime(searchValue) {
+    const getData = await fetch('https://api.iwannawatch.cf/garson.php?Name=' + encodeURIComponent(searchValue) + '&status=list')
+    const dataJson = await getData.json()
+    console.log(dataJson)
+    linkVideo(dataJson[0].ID)
+}
+
+async function linkVideo(episode) {
+    const getData = await fetch('https://api.iwannawatch.cf/garson.php?episode=' + episode)
+    const dataJson = await getData.json()
+    
+    document.querySelector('video').setAttribute('src', dataJson[0].Link)
+    document.querySelector('video').autoplay = true
 }
 
 

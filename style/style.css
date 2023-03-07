@@ -8,6 +8,15 @@
 
 /*      Setting variable        */
 
+/* 
+#010100
+#131313
+#0c0c0c
+#131116
+#e4e1e2
+#e2e1dd
+     */
+
 :root {
     --dark-grey: #222222;
     --light-grey: #CCCCCC;
@@ -163,7 +172,7 @@ section .content .container {
 section :where(.content .container, .containerSearch) .box {
     width: 300px;
     height: 450px;
-    background: url(https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg);
+    /* background: url(https://api.animeiat.co/storage/posters/UsOjk08Rzz8LGnms1617944628.jpg); */
     border-radius: 10px;
     cursor: pointer;
 }
